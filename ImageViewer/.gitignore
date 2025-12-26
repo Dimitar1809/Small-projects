@@ -1,3 +1,4 @@
-# Build outputs
-function_plotter
+# Binary artifacts
+iv
 *.o
+image.ppm
