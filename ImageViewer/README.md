@@ -1,19 +1,19 @@
-# Function Plotter (C + SDL2 + tinyexpr)
+# Image Viewer (PPM + SDL2)
 
-Small C program that plots a math expression in an SDL2 window using tinyexpr to evaluate the expression.
+Small C program that opens a PPM (P3/ascii) image and paints it pixel-by-pixel into an SDL2 window sized to the image.
 
 ## Requirements
-- SDL2 development libraries (e.g., `libsdl2-dev` on Debian/Ubuntu).
-- Standard C toolchain.
+- SDL2 development libraries installed (e.g. `libsdl2-dev` on Debian/Ubuntu).
+- A P3 PPM file named `image.ppm` in the working directory.
 
 ## Build & Run
 ```sh
-gcc function_plotter.c tinyexpr.c -lSDL2 -lm -o function_plotter
-./function_plotter "sin(x) * x"
+gcc iv.c -lSDL2 -o iv
+./iv
 ```
-Close the window to exit.
+Close the SDL window to exit.
 
-## How It Works
-- Parses the expression with tinyexpr (`tinyexpr.c`, `tinyexpr.h`).
-- Draws axes on a 900x600 window, samples `x` from -10 to 10, and paints pixels for `y`.
-- `function_plotter` is the built binary (ignored via `.gitignore`).
+## Files
+- `iv.c` — main source; loads `image.ppm` and renders to an SDL window.
+- `image.ppm` — sample image.
+- `.gitignore` — ignores the built binary and object files.
