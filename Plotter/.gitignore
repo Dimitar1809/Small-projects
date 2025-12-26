@@ -1,0 +1,3 @@
+# Build outputs
+function_plotter
+*.o
